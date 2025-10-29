@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Sidebar from './components/Sidebar';
 import Home from './components/Home';
@@ -36,7 +35,6 @@ const App: React.FC = () => {
     }
     setIsCheckingEmbed(false);
   }, []);
-
 
   useEffect(() => {
     const handleGlobalMouseMove = (e: MouseEvent) => {
@@ -93,23 +91,7 @@ const App: React.FC = () => {
     return null;
   }
 
-  if (!isEmbedded) {
-    return (
-      <div className="min-h-screen flex items-center justify-center text-white text-center p-4">
-        <div className="fashion-card card-glow p-8 md:p-12 max-w-md w-full">
-          <SuperAffiliateIcon className="w-16 h-16 mx-auto mb-6" />
-          <h1 className="text-3xl font-bold text-red-500 mb-4">Akses Ditolak</h1>
-          <p className="text-gray-300 text-lg">
-            Aplikasi ini hanya bisa dibuka jika anda berlangganan resmi.
-          </p>
-          <p className="text-gray-400 mt-2 text-sm">
-            Silahkan daftar dan beli aksesnya di <a href="https://gudangbot.com" target="_blank" rel="noopener noreferrer" className="text-indigo-400 hover:underline">gudangbot.com</a>.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
+  // Menghapus pengecekan akses embed - semua user bisa mengakses aplikasi
   return (
     <div 
       className="text-white min-h-screen flex"
